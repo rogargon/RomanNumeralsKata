@@ -3,11 +3,21 @@ package cat.udl.eps.acq;
 import java.util.ArrayList;
 
 /**
- * Created by roberto on 27/05/14.
+ * Created by http://rhizomik.net/~roberto/
  */
+
 public class RomanNumeralsKata {
     private static ArrayList<RomanSymbol> romanSymbols = new ArrayList<RomanSymbol>();
     static {
+
+        romanSymbols.add(new RomanSymbol("M", 1000));
+        romanSymbols.add(new RomanSymbol("CM", 900));
+        romanSymbols.add(new RomanSymbol("D", 500));
+        romanSymbols.add(new RomanSymbol("CD", 400));
+        romanSymbols.add(new RomanSymbol("C", 100));
+        romanSymbols.add(new RomanSymbol("XC", 90));
+        romanSymbols.add(new RomanSymbol("L", 50));
+        romanSymbols.add(new RomanSymbol("XL", 40));
         romanSymbols.add(new RomanSymbol("X", 10));
         romanSymbols.add(new RomanSymbol("IX", 9));
         romanSymbols.add(new RomanSymbol("V", 5));
@@ -17,11 +27,11 @@ public class RomanNumeralsKata {
 
     public static String arabicToRoman(int arabic) {
         String romanResult = "";
-        int remaining = arabic;
+        int arabicRemaining = arabic;
 
         for(RomanSymbol romanSymbol: romanSymbols) {
-            ExtractRoman extractRoman = new ExtractRoman(romanSymbol, romanResult, remaining).extract();
-            remaining = extractRoman.getArabicRemaining();
+            ExtractRoman extractRoman = new ExtractRoman(romanSymbol, romanResult, arabicRemaining).extract();
+            arabicRemaining = extractRoman.getArabicRemaining();
             romanResult = extractRoman.getRomanResult();
         }
         return romanResult;

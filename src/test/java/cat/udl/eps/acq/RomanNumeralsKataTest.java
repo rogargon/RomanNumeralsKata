@@ -54,6 +54,11 @@ public class RomanNumeralsKataTest {
 
     @Test
     public void testFortyNine() throws Exception {
-        assertEquals("49", "XXXXIX", RomanNumeralsKata.arabicToRoman(49));
+        assertEquals("49", "XLIX", RomanNumeralsKata.arabicToRoman(49));
+    }
+
+    @Test
+    public void testBiggestRoman() throws Exception {
+        assertEquals("3999", "MMMCMXCIX", RomanNumeralsKata.arabicToRoman(3999));
     }
 }

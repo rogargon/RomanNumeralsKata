@@ -51,4 +51,9 @@ public class RomanNumeralsKataTest {
         assertEquals("21", "XXI", RomanNumeralsKata.arabicToRoman(21));
         assertEquals("24", "XXIV", RomanNumeralsKata.arabicToRoman(24));
     }
+
+    @Test
+    public void testFortyNine() throws Exception {
+        assertEquals("49", "XXXXIX", RomanNumeralsKata.arabicToRoman(49));
+    }
 }

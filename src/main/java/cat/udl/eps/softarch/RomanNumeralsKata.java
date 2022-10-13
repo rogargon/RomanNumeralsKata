@@ -1,13 +1,9 @@
-package cat.udl.eps.acq;
+package cat.udl.eps.softarch;
 
 import java.util.ArrayList;
 
-/**
- * Created by http://rhizomik.net/~roberto/
- */
-
 public class RomanNumeralsKata {
-    private static ArrayList<RomanSymbol> romanSymbols = new ArrayList<RomanSymbol>();
+    private static final ArrayList<RomanSymbol> romanSymbols = new ArrayList<>();
     static {
 
         romanSymbols.add(new RomanSymbol("M", 1000));
@@ -40,7 +36,7 @@ public class RomanNumeralsKata {
     private static class ExtractRoman {
         private String romanResult;
         private int arabicRemaining;
-        private RomanSymbol romanSymbol;
+        private final RomanSymbol romanSymbol;
 
         public ExtractRoman(RomanSymbol romanSymbol, String romanResult, int arabicRemaining) {
             this.romanResult = romanResult;
